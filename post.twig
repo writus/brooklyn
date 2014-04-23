@@ -1,0 +1,23 @@
+{% extends 'brooklyn.layout.twig' %}
+
+{% block content %}
+<div id="content">
+
+        <div class="post">
+
+             <h2><a href="/">{{ blog.name }}</a>: <a href="/{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title}}"><b>{{ post.title }}</b></a></h2>
+
+            <div class="entry">
+
+                {{ post.body }}
+               
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+    

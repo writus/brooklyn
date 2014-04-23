@@ -1,0 +1,37 @@
+{% extends 'brooklyn.layout.twig' %}
+
+{% block content %}
+
+<div id="content">
+    <div class="post">
+        <h2><a href="/">{{ blog.name }}</a> : <b>archives</b></h2>
+
+            <div class="entry">
+    
+ 
+<table id="arc">
+    <tr><th><h1><b>all posts</b></h1></th></tr>
+{% for post in posts %}
+    
+{% if post.date|date('Y') != year %}
+    <tr class="year"><th><br /><br />{{ post.date|date('Y') }}</th></tr>
+{% endif %}
+{% if post.date|date('m') != month %}
+    <tr class="archive"><th>{{ post.date|date('M') }}</th><td></td></tr>
+{% endif %}
+
+<tr class="archive"><th>{{ post.date|date('d') }}</th><td><a href="/{{ post.url }}">{{ post.title}}</a></td></tr>
+
+{% set year = post.date|date('Y') %}
+{% set month = post.date|date('m') %}
+
+{% endfor %}
+
+
+
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

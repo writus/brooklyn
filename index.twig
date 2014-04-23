@@ -1,0 +1,24 @@
+{% extends 'brooklyn.layout.twig' %}
+
+{% block content %}
+    {% for post in posts|slice(0,1)%}
+
+
+        <div id="content">
+            <div class="post">
+                <h2><a href="/">{{ blog.name }}</a>: <a href="/{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title}}"><b>{{ post.title }}</b></a></h2>
+
+                <div class="entry">
+                    {{ post.body }}
+                </div>
+
+            </div>
+    {% endfor %}
+
+
+
+    <h1><b><a href="/archive/">all posts »</a></b></h1>
+</div>
+
+    
+{% endblock %}
